@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans+Khojki&family=Oswald:wght@200..700&family=Play:wght@400;700&family=Protest+Revolution&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sawarabi+Gothic&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Sawarabi Gothic", sans-serif;
+
+}
+/*------------------------OVERALL CONATINER STYLES--------------------------*/
+.overallConatiner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+/*------------------------NAVBAR CONATINER STYLES--------------------------*/
+.navbarContainer {
+    width: 100%;
+    height: 70px;
+    background-color: blue;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+/*------------------------NAVBAR LOGO STYLES--------------------------*/
+.menu {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+/*------------------------SUBNAVBAR CONATINER STYLES--------------------------*/
+.subNavbar {
+    width: 30%;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*------------------------SUBNAV PAGES  STYLES--------------------------*/
+a {
+    text-decoration: none;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+a:hover {
+    background-color: orange;
+}
+/*------------------------ICON DESABLED FOR DESKTOP BROWSER --------------------------*/
+i {
+    opacity: 0;
+}
+input {
+    opacity: 0;
+}
+/*------------------------CONTENT CONATINER STYLES--------------------------*/
+.contentConatiner {
+    width: 100%;
+    padding: 50px 20px;
+    line-height: 40px;
+}
+/*------------------------CONTENT INSIDE SLIDE IN RIGHT--------------------------*/
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.contentConatiner {
+    width: 100%;
+    padding: 50px 20px;
+    line-height: 40px;
+    animation: slideInRight 0.5s ease;
+}
+/*------------------------CONTENT INSIDE SLIDE IN LEFT--------------------------*/
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.conCon2 {
+    width: 100%;
+    padding: 50px 20px;
+    line-height: 40px;
+    animation: slideInLeft 0.5s ease;
+}
+/*------------------------NAVBAR LOGO INSIDE SLIDE IN TOP--------------------------*/
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.logoHead {
+    animation: slideInTop 0.5s ease;
+}
+/*------------------------NAVBAR PAGES INSIDE SLIDE IN BOTTOM--------------------------*/
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.subNavbar {
+    animation: slideInBottom 0.5s ease;
+}
+/*------------------------MEDIA QUERY FOR MOBILE DEVICES--------------------------*/
+@media only screen and (min-width: 100px) and (max-width: 500px) {
+   
+    .subNavbar {
+        position: fixed;
+        top: 70px;
+        left: -100%; 
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 50px;
+        background-color: gray;
+        padding-top: 100px;
+        transition: left 1s ease; 
+    }
+/*------------------------SMOOTH TRANSITION FOR ICON NAVBAR-------------------------*/
+    input:checked ~ .subNavbar {
+        left: 0; 
+    }
+   
+    .iconDiv {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    i {
+        font-size: 20px;
+        color: #fff;
+        opacity: 1;
+    }
+
+    a {
+        color: whitesmoke;
+    }
+    .contentConatiner {
+        line-height: 20px;
+        padding: 10px;
+
+    }
+    h1 {
+        padding: 10px 0;
+    }
+}
+
+/*------------------------MEDIA QUERY FOR TABLET DEVICES--------------------------*/
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+   
+    .subNavbar {
+        position: fixed;
+        top: 70px;
+        left: -100%; 
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 50px;
+        background-color: gray;
+        padding-top: 100px;
+        transition: left 1s ease; 
+    }
+/*------------------------SMOOTH TRANSITION FOR ICON NAVBAR-------------------------*/
+    input:checked ~ .subNavbar {
+        left: 0; 
+    }
+   
+    .iconDiv {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    i {
+        font-size: 20px;
+        color: #fff;
+        opacity: 1;
+    }
+
+    a {
+        color: whitesmoke;
+    }
+}
